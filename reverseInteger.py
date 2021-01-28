@@ -1,22 +1,15 @@
 class Solution:
     def reverse(self, x: int) -> int:
         xStr = str(x)
-        new = ""
-        
-        for i in range(len(xStr)-1,-1,-1):
-            new += xStr[i]
         
         if x < 0:
-            filt = ""
-            
-            for i in range(len(new)-1):
-                filt += new[i]
-                
-            new = - int(filt)
+            revStr = -int((xStr[1:])[::-1])
         
-        new = int(new)
+        else:
+            revStr = int(xStr[::-1])
         
-        if new >= (-2 ** 31) and new <= (2 ** 31 - 1):
-            return new
+        
+        if revStr >= (-2 ** 31) and revStr <= (2 ** 31 - 1):
+            return revStr
         
         return 0
